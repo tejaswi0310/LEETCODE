@@ -10,44 +10,79 @@ class Solution
 	//Function to find the level of node X.
 	int nodeLevel(int v, vector<int> adj[], int X) 
 	{
+	   // int level=0;
+	    
+	   // bool vis[v+1];
+	    
+	   // for(int i=0;i<v+1;i++){
+	   //     vis[i]=false;
+	   // }
+	    
+	   // queue<int>q;
+	   
+	   // vis[0]=true;
+	    
+	   // q.push(0);
+	    
+	   // while(!q.empty()){
+	   //     int size=q.size();
+	   //     while(size--){
+	   //         int node=q.front();
+	   
+	   //         q.pop();
+	        
+	   //     for(int i=0;i<adj[node].size();i++){
+	   //         if(adj[node][i]==X){
+	   //             return level+1;
+	   //         }
+	            
+	   //         if(vis[adj[node][i]]==false){
+	   //             vis[adj[node][i]]=true;
+	   //             q.push(adj[node][i]);
+	   //         }
+	   //     }
+	   //     }
+	        
+	   //     level++;
+	   // }
+	   // return -1;
+	    
+	    
+	    
 	    int level=0;
 	    
 	    bool vis[v+1];
-	    
 	    for(int i=0;i<v+1;i++){
 	        vis[i]=false;
 	    }
 	    
-	    queue<int>q;
-	   
 	    vis[0]=true;
 	    
+	    queue<int>q;
 	    q.push(0);
 	    
-	    while(!q.empty()){
+	    while(!q.empty())
+	    {
 	        int size=q.size();
 	        while(size--){
 	            int node=q.front();
-	       // if(node==X){
-	       //     return level-1;
-	       // }
 	            q.pop();
-	        
-	        for(int i=0;i<adj[node].size();i++){
-	            if(adj[node][i]==X){
-	                return level+1;
-	            }
-	            
-	            if(vis[adj[node][i]]==false){
-	                vis[adj[node][i]]=true;
-	                q.push(adj[node][i]);
+	            for(int i=0;i<adj[node].size();i++){
+	                if(adj[node][i]==X){
+	                    return level+1;
+	                }
+	                if(!vis[adj[node][i]]){
+	                    vis[adj[node][i]]=true;
+	                    q.push(adj[node][i]);
+	                }
 	            }
 	        }
-	        }
-	        
 	        level++;
 	    }
+	    
 	    return -1;
+	    
+	    
 	}
 };
 
