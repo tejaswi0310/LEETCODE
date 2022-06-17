@@ -7,23 +7,33 @@ using namespace std;
 class Solution
 {
     public:
-        int maxOnes (vector <vector <int>> &mat, int N, int M)
+        int maxOnes (vector <vector <int>> &mat, int n, int m)
         {
-            int ones=0,row=0;
-            int mn=0;
-            for(int i=0;i<N;i++){
-                for(int j=0;j<M;j++){
-                    if(mat[i][j]==1){
-                        mn++;
+            int ans=0,row=0;
+            
+            for(int i=0;i<n;i++)
+            {
+                int l=0,r=m-1,mx=m-1;
+                
+                while(l<=r)
+                {
+                    int mid=(l+r)/2;
+                    
+                    if(mat[i][mid]==1){
+                        mx=mid;
+                        r=mid-1;
+                    }
+                    else{
+                        l=mid+1;
+                    }
+                    
+                    if(m-1-mx>ans){
+                        ans=m-1-mx;
+                        row=i;
+                        
                     }
                 }
-                if(mn>ones){
-                    ones=mn;
-                    row=i;
-                }
-                mn=0;
             }
-            
             return row;
         }
 };
