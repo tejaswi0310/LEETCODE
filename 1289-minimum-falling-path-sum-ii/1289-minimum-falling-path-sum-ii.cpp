@@ -24,7 +24,7 @@ public:
             }
             
             for(int j=0;j<m;j++){
-                if(j==first_min_index){
+                if(j==first_min_index){//agar first min index le chuke hain ho to second minimum lene parega kyunki adjacent to nahi le sakte hain na
                     dp[j]=second_min+arr[i][j];
                 }
                 else{
