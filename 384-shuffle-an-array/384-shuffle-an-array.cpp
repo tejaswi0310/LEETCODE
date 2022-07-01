@@ -10,15 +10,14 @@ public:
     }
     
     vector<int> shuffle() {
-        vector<int>result(nums);
+        vector<int>res(nums);
         
-        for(int i=0;i<result.size();i++){
-            // int rand=random.rand
-            int pos=rand() %(result.size()-i);
+        for(int i=0;i<res.size();i++){
+            int pos=rand() %(res.size());
             
-            swap(result[pos+i],result[i]);
+            swap(res[pos],res[i]);
         }
-        return result;
+        return res;
     }
 };
 
