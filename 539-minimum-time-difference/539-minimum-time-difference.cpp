@@ -29,7 +29,7 @@ public:
             ans=min(ans,v[i]-v[i-1]);
         }
         int n=v.size();
-        
+        //first and last case needs to be handled properly that's why i was getting the error added 60*24 otherwise answer minus me aa jayega
         ans=min(ans,v[0]-v[n-1]+60*24);
         
         return ans;
