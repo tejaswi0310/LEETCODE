@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int next(int n)
+    int digitSquareSum(int n)
     {
         int res=0;
         while (n)
@@ -14,12 +14,12 @@ public:
     
     bool isHappy(int n)
     {
-        int i1=n, i2=next(n);
+        int i1=n, i2=digitSquareSum(n);
         
         while ( i2 != i1)
         {
-            i1 = next(i1);
-            i2 = next(next(i2));
+            i1 = digitSquareSum(i1);
+            i2 = digitSquareSum(digitSquareSum(i2));
         }
         
         return i1==1;
