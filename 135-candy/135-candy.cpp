@@ -1,39 +1,36 @@
 class Solution {
 public:
-    int candy(vector<int>& A) {
-        int N=A.size();
-    int B[N];
- 
-    // Distribute 1 chocolate to each
-    for (int i = 0; i < N; i++) {
-        B[i] = 1;
-    }
- 
-    // Traverse from left to right
-    for (int i = 1; i < N; i++) {
-        if (A[i] > A[i - 1])
-            B[i] = B[i - 1] + 1;
-        else
-            B[i] = 1;
-    }
- 
-    // Traverse from right to left
-    for (int i = N - 2; i >= 0; i--) {
-        if (A[i] > A[i + 1])
-            B[i] = max(B[i + 1] + 1, B[i]);
-        else
-            B[i] = max(B[i], 1);
-    }
- 
-    // Initialize sum
-    int sum = 0;
- 
-    // Find total sum
-    for (int i = 0; i < N; i++) {
-        sum += B[i];
-    }
- 
-    // Return sum
-    return sum;
+    int candy(vector<int>& arr) {
+        int n=arr.size();
+        int candies[n];
+        
+        for(int i=0;i<n;i++){
+            candies[i]=1;
+        }
+        
+        for(int i=1;i<n;i++){
+            if(arr[i]>arr[i-1]){
+                candies[i]=candies[i-1]+1;
+            }
+            else{
+                candies[i]=1;
+            }
+        }
+        
+        for(int i=n-2;i>=0;i--){
+            if(arr[i]>arr[i+1]){
+                candies[i]=max(candies[i],candies[i+1]+1);
+            }
+            else{
+                candies[i]=max(candies[i],1);
+            }
+        }
+        
+        int sum=0;
+        
+        for(int i=0;i<n;i++){
+            sum+=candies[i];
+        }
+        return sum;
     }
 };
