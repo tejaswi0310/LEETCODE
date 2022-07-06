@@ -7,18 +7,16 @@ public:
             mp[nums[i]]++;
         }
         
-        // int 
-        map<int,int>::iterator it;
-        for(it=mp.begin();it!=mp.end();it++){
-            if(it->second){
-                int freq=it->second;
+        for(auto it:mp){
+            if(it.second){
+                int freq=it.second;
                 
                 for(int i=0;i<k;i++){
-                    if(mp[it->first+i]<freq){
+                    if(mp[it.first+i]<freq){
                         return false;
                     }
                     else{
-                        mp[it->first+i]-=freq;
+                        mp[it.first+i]-=freq;
                     }
                 }
             }
