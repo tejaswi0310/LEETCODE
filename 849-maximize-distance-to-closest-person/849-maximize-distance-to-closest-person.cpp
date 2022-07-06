@@ -19,14 +19,14 @@ public:
         //maximum consecutive 0s
         int zeros=max0s(seats);
         
-        if(zeros==seats.size()-1){
-            if(seats[0]==1){
-                return seats.size()-1;
-            }
-            else if(seats[seats.size()-1]==1){
-                return seats.size()-1;
-            }
-        }
+//         if(zeros==seats.size()-1){
+//             if(seats[0]==1){
+//                 return seats.size()-1;
+//             }
+//             else if(seats[seats.size()-1]==1){
+//                 return seats.size()-1;
+//             }
+//         }
         
         int ans=(zeros+1)/2;
         
