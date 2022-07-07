@@ -16,15 +16,12 @@ public:
             if(arr[low]==0){
                 low++;
             }
-            
             else if(arr[high]==1){
                 high--;
             }
             else{
                 swap(arr[low],arr[high]);
-                low++;
-                high--;
-            
+                low++;high--;
             }
         }
     }
