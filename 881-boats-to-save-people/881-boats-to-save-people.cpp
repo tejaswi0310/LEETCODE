@@ -35,12 +35,15 @@ public:
         int i=0,j=n-1;
         
         while(i<=j){
-            count++;
             if(people[i]+people[j]<=limit){
-                
+                count++;
                 i++;
+                j--;
             }
-            j--;
+            else if(people[i]+people[j]>limit){
+                count++;
+                j--;
+            }
             
         }
         return count;
