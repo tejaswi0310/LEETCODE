@@ -30,14 +30,21 @@ int main()
 
 void rotate(int arr[], int n)
 {
-    if(n==1){
-        return;
-    }
+    // if(n==1){
+    //     return;
+    // }
+    // int first=arr[n-1];
+    // int last=arr[n-2];
+    // for(int i=n-2;i>=1;i--){
+    //     arr[i]=arr[i-1];
+    // }
+    // arr[0]=first;
+    // arr[n-1]=last;
+    
     int first=arr[n-1];
-    int last=arr[n-2];
-    for(int i=n-2;i>=1;i--){
-        arr[i]=arr[i-1];
+    
+    for(int i=n-1;i>=0;i--){
+        arr[i+1]=arr[i];
     }
     arr[0]=first;
-    arr[n-1]=last;
 }
