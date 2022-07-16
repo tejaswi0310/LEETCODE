@@ -10,9 +10,9 @@ public:
         while(j<s.size()){
             mp[s[j]]++;
             
-            if(mp.size()==j-i+1){
-                ans=max(ans,j-i+1);
-            }
+//             if(mp.size()==j-i+1){
+                
+//             }
             
             while(mp.size()<j-i+1){
                 mp[s[i]]--;
@@ -22,7 +22,7 @@ public:
                 }
                 i++;
             }
-            
+            ans=max(ans,j-i+1);
             j++;
         }
         
