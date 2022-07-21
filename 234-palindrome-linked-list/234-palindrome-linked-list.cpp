@@ -10,19 +10,39 @@
  */
 class Solution {
 public:
-    bool isPalindrome(ListNode* head) {
-        vector<int>v;
+    ListNode* reverse(ListNode* head)
+    {
+        ListNode* curr=head,*prev=NULL,*next=NULL;
         while(head){
-            v.push_back(head->val);
-            head=head->next;
+            next=head->next;
+            head->next=prev;
+            prev=head;
+            head=next;
+        }
+        return prev;
+    }
+    bool isPalindrome(ListNode* head) {
+        ListNode* slow=head,*fast=head;
+        
+        while(fast and fast->next){
+            slow=slow->next;
+            fast=fast->next->next;
         }
         
-        int i=0,j=v.size()-1;
+        if(fast){
+            slow=slow->next;//for odd number length linked list
+        }
         
-        while(i<=j){
-            if(v[i++]!=v[j--]){
+        fast=head;
+        slow=reverse(slow);
+        
+        while(slow){
+            if(fast->val!=slow->val){
                 return false;
             }
-        }return true;
+            slow=slow->next;
+            fast=fast->next;
+        }
+        return true;
     }
 };
