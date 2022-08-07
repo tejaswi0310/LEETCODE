@@ -6,6 +6,7 @@ public:
         int num1=0,num2=0;
         
         while(i<n1 || j<n2){
+            //comparing every number in between the decimals
             while(i<n1 and version1[i]!='.'){
                 num1=num1*10 + (version1[i]-'0');
                 i++;
