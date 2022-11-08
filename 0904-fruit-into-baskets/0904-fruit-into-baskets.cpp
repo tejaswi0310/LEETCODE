@@ -1,12 +1,7 @@
 class Solution {
 public:
     int totalFruit(vector<int>&nums) {
-        if(nums.size()==1){
-            return 1;
-        }
-        if(nums.size()==2){
-            return 2;
-        }
+        
         int i=0,j=0;
         unordered_map<int,int>mp;
         int ans=0;
