@@ -1,48 +1,69 @@
-#include<bits/stdc++.h>
+//{ Driver Code Starts
+#include <bits/stdc++.h>
 using namespace std;
 
-bool comp(pair<int,int>p1, pair<int,int>p2){
-    if(p2.second==p1.second){
-        return p1.first<p2.first;
+
+
+// } Driver Code Ends
+class Solution{
+    public:
+    static bool comp(pair<int,int>a, pair<int,int>b){
+        if(a.second==b.second){
+            return a.first<b.first;
+        }
+        return a.second>b.second;
     }
-    
-    return p1.second> p2.second;
-}
+    vector<int> sortByFreq(int arr[],int n)
+    {
+        unordered_map<int,int>mp;
+        for(int i=0;i<n;i++){
+            mp[arr[i]]++;
+        }
+        vector<pair<int,int>>v;
+        for(auto it:mp){
+            v.push_back({it.first,it.second});
+        }
+        
+        sort(v.begin(),v.end(),comp);
+        vector<int>ans;
+        for(int i=0;i<v.size();i++){
+            while(v[i].second--){
+            ans.push_back(v[i].first);
+            }
+        }return ans;
+    }
+};
 
+//{ Driver Code Starts.
 
-
-
-int main()
- {
+int main() {
+	
+	
 	int t;
-	cin>>t;
+	cin >> t;
+	
+	
 	while(t--){
+	    
+	    
 	    int n;
-	    cin>>n;
-	    int arr[n];
-	    for(int i=0;i<n;i++){
-	        cin>>arr[i];
+	    cin >> n;
+	    
+	    int a[n+1];
+	    
+	    for(int i = 0;i<n;i++){
+	        cin >> a[i];
 	    }
-	    
-	    vector<pair<int,int>>v;
-	    
-	    unordered_map<int,int>mp;
-	    
-	    for(int i=0;i<n;i++){
-	        mp[arr[i]]++;
-	    }
-	    
-	    for(auto it:mp){
-	        v.push_back({it.first,it.second});
-	    }
-	    
-	    sort(v.begin(),v.end(),comp);
-	    
-	    for(auto it:v){
-	        for(int j=0;j<it.second;j++){
-	            cout<<it.first<<' ';
-	        }
-	    }
-	    cout<<endl;
+	    Solution obj;
+	    vector<int> v;
+	    v = obj.sortByFreq(a,n);
+	    for(int i:v)
+	        cout<<i<<" ";
+	    cout << endl;
 	}
+	
+	return 0;
 }
+
+
+// } Driver Code Ends
