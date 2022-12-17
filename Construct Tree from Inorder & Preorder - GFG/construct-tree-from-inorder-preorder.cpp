@@ -41,8 +41,6 @@ struct Node
 */
 class Solution{
     public:
-    // int curr=0;
-    
     Node*build_tree(int in[], int pre[], int start, int end,int &curr)
     {
         if(start>end){
