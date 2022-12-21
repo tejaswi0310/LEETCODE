@@ -28,46 +28,6 @@ class Solution
     	}
     	reverse(res.begin(),res.end());
     	return res;
-    	
-    // 	 string ans="";
-
-    //  int n=S.length();
-
-    //  int cnt=0;
-
-    //  for(int i=n-1;i>=0;i--){
-
-    //      if(cnt==K){
-
-    //          cnt=0;
-
-    //          ans.push_back('-');
-
-    //      }
-
-    //      if(S[i]=='-') continue;
-
-    //      ans.push_back(S[i]);
-
-    //      cnt++;
-
-    //  }
-
-    //  reverse(ans.begin(), ans.end());
-
-    //  string s="";
-
-    //  for(int i=0;i<ans.length();i++)  {
-
-    //      if(islower(ans[i])) s.push_back(toupper(ans[i]));
-
-    //      else s.push_back(ans[i]);
-
-    //  }
-
-    //  if(s[0]=='-') s.erase(0,1);
-
-    //  return s;
     }
 };
 
