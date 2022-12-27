@@ -6,20 +6,22 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-    bool isStraightHand(int n, int k, vector<int> &hand) {
+    bool isStraightHand(int N, int k, vector<int> &hand) {
         map<int,int>mp;
         for(int i=0;i<hand.size();i++){
             mp[hand[i]]++;
         }
         
         for(auto it:mp){
-            if(it.second){
+            if(it.second>0){
                 int freq=it.second;
                 for(int i=0;i<k;i++){
                     if(mp[it.first+i]<freq){
                         return false;
                     }
-                    mp[it.first+i]-=freq;
+                    else{
+                        mp[it.first+i]-=freq;
+                    }
                 }
             }
         }return true;
