@@ -26,20 +26,15 @@ struct Node
 class Solution {
   public:
     vector<int> maximumValue(Node* node) {
-        vector<int>res;
-        if(!node){
-            return res;
-        }
+        vector<int>v;
         queue<Node*>q;
         q.push(node);
-        
         while(!q.empty()){
             int mx=INT_MIN;
             int size=q.size();
             for(int i=0;i<size;i++){
-                Node* f=q.front();
+                Node *f=q.front();
                 q.pop();
-                
                 mx=max(mx,f->data);
                 if(f->left){
                     q.push(f->left);
@@ -48,9 +43,9 @@ class Solution {
                     q.push(f->right);
                 }
             }
-            res.push_back(mx);
+            v.push_back(mx);
         }
-        return res;
+        return v;
     }
 };
 
