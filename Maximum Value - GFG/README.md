@@ -48,6 +48,6 @@
 
 <p><br>
 <span style="font-size:18px"><strong>Constraints:</strong><br>
-1 ≤ Number of nodes ≤ 10000<br>
-1 ≤ Data of a node ≤ 100000</span></p>
+1 ≤ Number of nodes ≤ 10^4<br>
+1 ≤ Data of a node ≤ 10^5</span></p>
 </div>
